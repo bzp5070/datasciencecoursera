@@ -7,11 +7,11 @@ This document describes various measurements captured in the tidy dataset
 3. Columns 3 to 81 - various measurements captured (described below)
 
 ## References
-Domains - Time Domain or Frequency Domain variables
-Accelerometer - Smartphone embedded accelerometer measures  3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz
-Gyroscope -  Smartphone embedded gyroscope measures 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz
-Gravity - Gravitational component of sensor acceleration signal
-Body - Body motion component of sensor acceleration signal
+1. Domains - Time Domain or Frequency Domain variables
+2. Accelerometer - Smartphone embedded accelerometer measures  3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz
+3. Gyroscope -  Smartphone embedded gyroscope measures 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz
+4. Gravity - Gravitational component of sensor acceleration signal
+5. Body - Body motion component of sensor acceleration signal
 
 ## Measurements
 - TimeDomain_BodyAccelerometer_Mean_X
