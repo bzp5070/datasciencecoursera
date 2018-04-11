@@ -21,7 +21,7 @@ points(power_consumption_2days$DateTime, power_consumption_2days$Sub_metering_2,
 points(power_consumption_2days$DateTime, power_consumption_2days$Sub_metering_3,type="l", col="blue")
 
 ## Add legend
-legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col = c("black","red","blue"))
+legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col = c("black","red","blue"), lty="solid")
 
 ## Close device
 dev.off()
