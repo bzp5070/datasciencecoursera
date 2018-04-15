@@ -95,20 +95,20 @@ The four plots that you will need to construct are shown below.
 ### Plot 1
 
 
-![plot of chunk unnamed-chunk-2](plot1.png) 
+![plot of chunk unnamed-chunk-2](plots/plot1.png) 
 
 
 ### Plot 2
 
-![plot of chunk unnamed-chunk-3](plot2.png) 
+![plot of chunk unnamed-chunk-3](plots/plot2.png) 
 
 
 ### Plot 3
 
-![plot of chunk unnamed-chunk-4](plot3.png) 
+![plot of chunk unnamed-chunk-4](plots/plot3.png) 
 
 
 ### Plot 4
 
-![plot of chunk unnamed-chunk-5](plot4.png) 
+![plot of chunk unnamed-chunk-5](plots/plot4.png) 
 
