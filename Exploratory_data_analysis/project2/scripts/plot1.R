@@ -1,0 +1,50 @@
+## Exploratory data analysis Course Project 2
+
+#Set working directory
+setwd("~/Desktop/data_science/Exploratory data analysis/project2/")
+
+#Download data
+url = "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip"
+download.file(url, destfile="NEI_data.zip")
+unzip('NEI_data.zip',exdir='NEI_data',overwrite=TRUE)
+
+#Read in the data
+SCC <- readRDS("NEI_data/Source_Classification_Code.rds")
+NEI <- readRDS("NEI_data/summarySCC_PM25.rds")
+
+names(SCC)
+names(NEI)
+
+#Create new column with unique source id
+NEI$sourceid <- paste(NEI$fips, NEI$SCC, sep=".")
+
+#Store data frames by "year"
+emissions99 <- subset(NEI, year=="1999")
+emissions02 <- subset(NEI, year=="2002")
+emissions05 <- subset(NEI, year=="2005")
+emissions08 <- subset(NEI, year=="2008")
+
+#Total emissions data frame to plot
+total_emissions <- data.frame(years=c("1999","2002","2005","2008"), Total_emissions=
+                                c(sum(emissions99$Emissions, na.rm = TRUE), 
+                                  sum(emissions02$Emissions, na.rm = TRUE),
+                                  sum(emissions05$Emissions, na.rm = TRUE),
+                                  sum(emissions08$Emissions, na.rm = TRUE)))
+
+#Open device
+png(filename = "plot1.png", width = 480, height = 480, units='px')
+
+#Generate Bar Plot of total emissions by year
+barplot(total_emissions$Total_emissions, names=total_emissions$years, main="Total emissions from PM2.5 (in Tons) from year 1999 through 2008", xlab="Year", ylab="Total PM2.5 emissions in Tons")
+
+#Close device
+dev.off()
+
+#Clean up data after running the analysis
+if(dir.exists('NEI_data/')){
+  file.remove("NEI_data/Source_Classification_Code.rds")
+  file.remove("NEI_data/summarySCC_PM25.rds")
+  file.remove('NEI_data/', recursive=TRUE)
+}
+file.remove("NEI_data.zip")
+
